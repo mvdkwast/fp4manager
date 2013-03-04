@@ -1,0 +1,254 @@
+IDEAS
+
+Priority from high to low
+
+- add pan to channel mixer
+- verify that everything is sent on connect ! (again :) )
+- extend show meta info with artist name, file version, creation & modification date, description
+- refactor: move master controller send functions to fp4hw OK
+- currently master settings restore preferences are not honored (some are loaded at startup, others not,
+  independantly of preferences)
+- load/save configs from menu
+  + menu entries and dialogs 80%
+  + obsolete remove configmanager OK
+  + configs in performance window must be handled.. 50%
+  + configs should write a summary to a cache file in the config dir, which should be
+    used to provide descriptions in the timeline view. (other option is to use load
+    descriptions in a background thread, and cache descriptions in .fp4config files)
+- option to reset master controls on exit + button to reinitialise master settings
+- add harmonizer
+  + use a controller to turn on / off
+  + use visual keyboard to draw chord
+  + use choose 7 note scale or chromatic ?
+- arpeggiator (but this requires timing...)
+  + same remarks as harmonizer
+- controller keys should be moved from channel generators to own window, and apply before
+  notes are processed (by splits, other controller generators, and sends) so original note on
+  can be suppressed
+- refactor: move binding save/restore code from fp4hw to bindingmanager TEST
+- bug: controller values are generated after note on, this may cause a click TEST
+- bug: channel pressure: decay value goes too far (need more slow decays) TEST
+- bug: keytime and controllerkeys channel are 0 based TEST
+- bug: keytime and controllerkeys: controller goes from 0 to 128 TEST
+- bug: instrument selecter in channels doens't preview instruments (doesn't send program changes)
+- default channel configuration should have effect on for first channel
+- preferences:
+  + rename globalconnectionsettings to preferences
+  + remove restore bindings OK
+  + remove restore mappings OK
+  + add bank mode OK
+- rearrange interface to have reverb and chorus in tabs on main page, next to effects.
+- save application version + metadata in config files
+  + app name
+  + app version
+  + file type (splits, effects, bindings, configuration, timeline)
+- bindings:
+  + bug: binding manager is broken OK
+  + bug: binding moves in table when edited OK
+  + doubleclick for edit OK
+  + add easing curves
+  + keyboard bindings
+  + link midibutton to binding editor OK
+  + indicate that control is bound
+  + add bindings from preset (in addition of replacing) OK
+  + weird bugs when binding over existing bindings ?
+- handle 2 fx parameters in channel configuration / channel controllers TEST ME
+- tunings
+- implement modulation configuration (lfo1&2 rate, pitch, tva & tvf depth)
+- performances
+  + scroll timelineview to focus active frame when next/previous buttons are pressed
+  + show_mode keyboard bindings 50% (not for nextsong, nextinsong)
+  + show_mode midi bindings OK
+  + add song button must be disabled when string is empty
+  + doubleclick preset should insert after current showpreset in timeline, or
+    before if current preset is empty
+  + warn when preset is removed when used in current (any?) show
+
+checks:
+- check if all channel's effect depth are restored if another effect is chosen
+- check if master reverb is handled correctly (ie. preset/individual mode works)
+- add modified indicator to preset name if effect parameters are changed
+- controllers reset should set vibrato depth to 0: no ! center value is 0 vib !
+  add tooltip to explain
+
+bugs:
+- bug: gs send data widget is behind other stuff
+- bug: don't reset fx parameters when effect is saved
+- bug: on GSreset / reinit / reconnect, m_fp4 notes table should be cleared
+  if another keyboard is connected and uses the same channels, this will bug !
+- bug: forbid (escape?) slashes in configuration names (and all saveable stuff)
+- bug: channel instrument not sent when channel is activated ?
+- bug: restore local on on exit ?
+- bug: channel mappings: some padding is required because handles are clipped on left side for rangesliders
+
+enhancements:
+- FP4Win::m_fp4 should probably be moved to FP4ManagerApplication class
+- use balance button as controller, convert fp4 message to continuous balance
+- set defaults in master control thingy
+- on program start, check if 'current' effect settings match a named preset, display that name instead
+  of 'current'
+- master presets for reverb and chorus
+- toggle style controllers: one push on, next push off
+- make balance knob available as virtual controller using its whole range. should be
+  an option
+- multiple input ports, with routing based on port/channel instead of just channel
+  no usecases with my current hardware, 16 channels are enough
+- multiple output ports. route to port/channel instead of just channel
+  this would make it possible to use external/software synths. Ideally this would
+  include autoconnect to output and autoload of synth software
+- 1cc for several widgets ?
+- effect parameter defaults: 80% (fine-tune effects like rotary)
+- discover reverb and chorus parameters
+- change effect value based on time since last key
+- change effect value based on velocity of last key
+- move all reverb/chorus etc settings from master+controllers to new window ?
+- tap function to set tempo ? if possible... else tap function to set rates. needs thought.
+- make instrument display mode switch look better
+- tunings
+- pretty icon
+- icon for connected / disconnected
+- more statusbar messages / menu->statusbar
+- better about dialog
+
+tests:
+- check if feedback (49-89 -> 0-80%) can be set out limits !
+
+problems
+- add labels with buddies to widgets to make selection quicker
+  >won't fix easily, we need accelerators in the labels to be able to do that.
+- display current effect parameter value
+  > how ? also the problem is that some scales seems to be log
+  > or arbitrary so knowing the exact value won't say much.
+  > ticks added instead to help visualize proportions: 100%
+- display current effect help message when selected
+  > where ? there's not much space left. hover on label is not too bad after all
+
+should be documented gotchas
+- pedal sends cc 64 values to channel 1 and 3. channel 3 is ignored else pedal becomes
+  sustain + something else control at the same time.
+
+done
+- make tooltips right 100%
+- display parameter units 100%
+- enter all effects 100%
+- preferences dialog to choose if app starts with last instrument/settings or
+  saved instrument setting, send master controls on connect, check hw on startup 100% : TEST
+- autoreconnect, handle disconnects, allow to enter program without fp4 connected: 100% TEST
+- fix preset select: 100%
+- status bar with connection status and value of current parameter: 100%
+- gs reset, all notes off, local on / off, resend initialisation 100%
+  - reset, notes off, local on/off
+  - implement resend initialization:
+- set window titles 100%
+- make master vol, reverb, chorus available 100%
+- close all windows when main window closes 100%
+- midi learn widget: delete text doesn't wrap, don't show delete button if
+  there's nothing to delete: 100%
+- make effect widget scrollable 100%
+- fix: when instrument favourite is removed it stays in settings file: 100%
+- fix: stuck note problem: resolved by maintaining a table of which notes are pressed. 100%
+- wontfix: remove m_fp4 from fxwidget : no we need it for midi binding buttons
+- controller sliders (cc's) 100%
+  - save/restore slider values as presets like effects : no, use global presets
+  - option to restore values on startup: 100%
+  - reset to default button 100%
+- connect secondary keyboard, virtual keyboard (or alsa in) 100%
+- bind controllers to effect parameters 100%
+  - save controller presets 100%
+  - midi learn + delete: 100%
+  - binding manager to load/save presets, view/delete mappings 100%
+  - options to set range of controllers 100%
+- channel configuration 100%
+  - controller dialogs must be created on start, else they cannot be bound 100%
+  - save/restore controller data
+  - remove channel volume from controller data 100%
+- normalize effect parameter names so bindings can apply to more than one effect. 100%
+  - Speed (Rotary 1, 2) -> Rotary Speed OK
+  - Pan -> Panning OK
+- bug: autoconnectmanager: when client connects, an invalid row is also added. when client disconnects,
+  its name is added to col 1 instead of 2. FIXED
+- autoconnect external devices: 100% done
+  - make it possible to delete entries. OK
+  - make window look better OK
+  - test with qjackctl OK
+  - save window size OK
+  - pressing the autoconnect should also connect the client -> separate connect button now. OK
+- add instruments numbers OK
+- mono/poly instruments OK
+- shortcut to raise mainwindow OK
+- implement next instrument in bank / previous instrument in bank + key bindings OK
+- make instrument favourites work with instrumentId instead of FP4Instrument*
+- preset sounds: sound = instrument + effect + master settings + bindings: 100%
+- icon
+- send menu: notes off, reset OK
+- bug: keyboard view: notes off not handled FIXED
+- bug: controller binding window: channels are displayed 0 based FIXED
+- use channel color for channel controllers OK
+- instrument menu: favourite list, add/remove favourite entry OK
+- splits 98%
+  + load / save / timeline OK
+  + restore mappings configuration option OK
+  + restore defaults button OK
+  + implement midi routing OK
+  + highlight current output range: instead of using focus, make status 'current' managed by splitswidget OK
+- shows: ordered set of sounds
+  + main menu OK
+  + rewind OK
+  + implementnext/prev song OK
+  + load configuration when preset is doubleclicked / moved to and show_mode is active OK
+  + when preset is updated (^O), update description in show window OK
+  + when dragged to next preset, swap both, like in songs: OK
+  + don't allow 2 songs w/ same name OK
+  + edit / doubleclick edit song name/color OK (not color)
+  + double click to make preset current OK
+  + display current show preset in delegate OK
+  + delete configuration from song OK
+  + clear all configurations in song OK
+  + delete configuration by dragging back to preset widget OK
+  + delete / enter keys in timeline OK
+  + delete / enter keys in songs OK
+  + when songs are loaded in show window, reset color OK
+  + only display song title once in timeline OK
+  + implement ctrl+drag to copy presets between songs OK
+- effect off: change effect level into effect on/off OK
+- bug: instrument numbers are 0 based OK
+- restore channel controllers windows size/pos per channel OK
+- bug: add fav instrument doesn't work in channel conf FIXED
+- channels:
+  + tabbed view
+  + map pedals and pitch OK
+  + notes off / sounds off OK
+  - channel transform modes:
+    + modes should be cummulative instead of exclusive NO
+    + bug: stuck notes OK
+    + split widget: update transform mode when outchannel is changed OK
+    + mode actions are inverted OK
+    + infinite note, monophonic w/ retrigger note when pressed OK
+    + infinite note, monophonic w/ note off when pressed again OK
+    + infinite chords: detect clustered notes, played after a time interval after a cluster is
+      detected send note off to current notes OK
+    + see if portamento can work: implement send portamento control after each not if portamento if on OK
+- bug: usb names with ':' in autoconnect OK
+- bug: controller keys: lock key activate channel, noteon and noteoff generate one-off controller numbers OK
+- bug: key time: needs faster settings OK
+- bug: fxwidget doesn't update statusbar OK
+- time since note as controller OK
+- individual ranges of notes as controllers consecutive controllers + optional lock mode (lowest key must be pressed
+  to recognize other keys in range) OK
+- set icon for controller generator window OK
+- channel pressure to controller OK
+  + needs settings management OK
+  + average clustered notes NO
+  + moving average, different up and down speeds OK
+  + decay OK
+- refactor effect code to have the effect combo included in the widget OK
+- load save mechanisms:
+  + don't save default values,
+    = especially channelmappings. only save active mappings OK
+    = don't save controllers/generators for inactive channels OK
+  + save configs in separate files OK
+  + save timelines in separate files OK
+  + save effects in separate files OK
+  + add load/save menu entry to save entire config, which replaces configwindow. OK
+  + save window size/pos and open/closed status ? NO -> save window pos etc in timeline, with option to restore
+  + On exit save state as a normal config, ask to save. NO -> save in current

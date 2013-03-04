@@ -1,0 +1,153 @@
+== bugs:
+
+== tests:
+
+test all load/save data
++ preferences OK
++ favourite instruments OK
++ geometry
+  - main window OK
+  - channels OK
+  - channel controllers OK
+  - channel generators OK
+  - splits OK
+  - bindings OK
+  - configurations OK
+  - timeline OK
+  - autoconnect OK
+  - master window
++ master settings OK
++ autoconnect OK
++ instruments data
+  - restored on all channels OK
+  - channel settings OK
+  - controller settings OK
+  - generator settings OK
++ effect
+  - effect name OK
+  - current effect preset restored OK
+  - effect list ok OK
++ controller bindings OK
++ splits OK
+
+test all send to fp4 on connect
+- local off OK
+- instruments
+  - instrument OK
+  - controller values OK
+  - pitch OK
+  - effect enabled OK
+  - monophonic OK
+  - chorus send <- not ok
+  - reverb send <- not ok
+- master settings
+  + correct reverb OK
+  + chorus OK
+  + correct volume OK
+  + correct panning <- doesn't work
+- effect data
+  + current effect OK
+  + parameters OK
+
+test all configurations data
+
+test all send to fp4 on configuration load
+
+== Plan
+
+- set instrument bank display mode in preferences, don't save last window state
+
+- make global preferences accessible through qapp
+
+- don't:
+  + save geometries on window close
+
+- on startup, from fp4win
+  + restore favourites
+  + restore effect list
+  + restore autoconnect data
+  + restore preferences
+  + restore window geometries
+
+  + restore current effect and settings
+  + restore current instrument
+  + restore master settings
+  + restore channels
+  + restore splits
+  + restore bindings
+
+- at app exit, in default file if confirmed by user:
+  + save current effect name and settings
+  + save current instrument
+  + save all window geometries
+    = performance window needs to have its splitter saved
+  + save master settings
+  + save channel settings
+  + save splits
+  + save bindings
+
+- at app exit, in default file, w/out confirmation:
+  + save instrument favourites
+
+- effects:
+  + save effect current to effect file when effect changes
+  + save in compact mode (parameter array)
+
+- on window close
+  + save preferences in default file
+  + save autoconnect settings in default file
+  + save current performance in default timeline file
+
+- configurations
+  + put configurations in own directory, 1 configuration per file
+  + create index file with summary for configurations
+
+- timelines
+  + one file each in own directory
+  + save window geometries
+
+== Current settings
+
+FP4Win: geometry + bank display mode
+
+FP4FX: current effect name
+
+FXPresets: all presets for all fx
+
+FavouriteInstruments: favourite instrument list
+
+FP4MasterWin: geometry for master controllers
+
+ConnectionSettings: preferences
+
+MasterSettings: master controllers values
+
+AutoConnectWin: geometry for autoconnect window
+
+FP4ControllerWin: geometry for controllers window (obsolete, should be by channel ?)
+
+ChannelInstrumentWin: geometry for channel instrument window (obsolete too)
+
+ChannelInstruments: all channel related settings (instrument, controllers, monophonic, fx enabled) (only for "current" ?)
+
+BindingsWin: geometry for controller bindings window
+
+ControllerBindings: controller binding presets
+
+configurationswin: geometry for configurations window
+
+Master: same thing as [mastersettings] (master controller values) ??
+
+Configurations: presets of entire configurations (ChannelInstruments+Effect+Bindings+Master+Splits)
+
+showWin: performance window geometry
+
+shows: presets of songs+configuration names
+
+SplitsWindow: geometry of splits
+
+ChannelControllersWin: geometry of channel controller windows
+
+AutoconnectExternal: autoconnection alsa devices
+
+ChannelMappings: splits

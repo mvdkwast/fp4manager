@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>piano.png</file>
+        <file>midi-plug.png</file>
+        <file>right-arrow.png</file>
+        <file>edit-undo.png</file>
+    </qresource>
+</RCC>
