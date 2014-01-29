@@ -22,7 +22,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "instrumentwidget.h"
 #include "fp4qt.h"
 #include "config.h"
-#include <QtGui>
+#include <QtWidgets>
 
 InstrumentSelectDialog::InstrumentSelectDialog(FP4Qt *fp4, unsigned channel, unsigned instrumentId, QWidget *parent) :
     QDialog(parent),

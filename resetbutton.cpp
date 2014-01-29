@@ -19,7 +19,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 ******************************************************************************/
 
 #include "resetbutton.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <QDebug>
 
 ResetButton::ResetButton(QWidget *target, QWidget *parent) :

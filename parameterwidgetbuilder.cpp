@@ -23,7 +23,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "midibindbutton.h"
 #include "resetbutton.h"
 #include "fp4managerapplication.h"
-#include <QtGui>
+#include <QtWidgets>
 
 class ControllerWidgetBuilderPrivate {
 public:

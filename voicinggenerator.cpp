@@ -22,7 +22,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "chordselecterdialog.h"
 #include "fp4qt.h"
 #include "musictheory.h"
-#include <QtGui>
+#include <QtWidgets>
 
 VoicingGenerator::VoicingGenerator(FP4Qt *fp4, int channel, QWidget *parent) :
     ControllerGenerator(fp4, channel, parent),

@@ -104,6 +104,7 @@ HEADERS += \
 
 QMAKE_CXXFLAGS += -std=c++0x
 LIBS += -lasound
+QT += widgets
 
 OTHER_FILES += \
     NOTES.txt \

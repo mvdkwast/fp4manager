@@ -20,7 +20,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 
 #include "preferenceswindow.h"
 #include "fp4win.h"
-#include <QtGui>
+#include <QtWidgets>
 
 PreferencesWindow::PreferencesWindow(Preferences *prefs, QWidget *parent) :
     Window("preferences", parent),

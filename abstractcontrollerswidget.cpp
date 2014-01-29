@@ -21,7 +21,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "abstractcontrollerswidget.h"
 #include "fp4managerapplication.h"
 #include "fp4qt.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <QDebug>
 
 AbstractControllersWidget::AbstractControllersWidget(QWidget *parent) :

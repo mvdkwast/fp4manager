@@ -24,7 +24,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "preferences.h"
 #include "fp4managerapplication.h"
 
-#include <QtGui>
+#include <QtWidgets>
 
 QList<int> InstrumentWidget::s_favourites;
 QList< InstrumentWidget*> InstrumentWidget::s_instrumentWidgets;

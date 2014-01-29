@@ -24,7 +24,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "config.h"
 #include "themeicon.h"
 #include <QDebug>
-#include <QtGui>
+#include <QtWidgets>
 #include <algorithm>
 
 const ClientInfo ClientInfo::Invalid(QString(), -1);

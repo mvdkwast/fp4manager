@@ -21,7 +21,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "controllergenerator.h"
 #include "fp4qt.h"
 #include "midibindbutton.h"
-#include <QtGui>
+#include <QtWidgets>
 
 ControllerGenerator::ControllerGenerator(FP4Qt *fp4, int channel, QWidget *parent) :
     QWidget(parent),

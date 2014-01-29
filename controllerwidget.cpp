@@ -31,7 +31,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "portamentowidget.h"
 #include "sendswidget.h"
 #include "pitchwidget.h"
-#include <QtGui>
+#include <QtWidgets>
 
 using namespace std;
 

@@ -31,7 +31,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4managerapplication.h"
 #include "effectwidget.h"
 #include "fp4constants.h"
-#include <QtGui>
+#include <QtWidgets>
 
 ChannelsWindow::ChannelsWindow(FP4Qt *fp4, QWidget *parent) :
     Window(QString("channels"), parent),

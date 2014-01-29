@@ -23,7 +23,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4effect.h"
 #include "config.h"
 #include "window.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <QDebug>
 
 #define LAST_PRESET_KEY "values"

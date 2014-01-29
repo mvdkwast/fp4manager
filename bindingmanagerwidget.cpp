@@ -22,7 +22,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4qt.h"
 #include "fp4managerapplication.h"
 #include "themeicon.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <algorithm>
 
 MidiBindingTableModel::MidiBindingTableModel(FP4Qt *fp4, QObject *parent) :

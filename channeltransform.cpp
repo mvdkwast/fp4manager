@@ -21,7 +21,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "channeltransform.h"
 #include "fp4qt.h"
 #include <QDateTime>
-#include <QtGui>
+#include <QtWidgets>
 
 ChannelTransform::ChannelTransform(FP4Qt *fp4, QObject *parent) :
     QObject(parent),

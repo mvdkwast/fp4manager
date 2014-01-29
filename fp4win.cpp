@@ -38,7 +38,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4constants.h"
 #include "fp4managerapplication.h"
 #include "themeicon.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <algorithm>
 
 FP4Win::FP4Win(QWidget *parent) :

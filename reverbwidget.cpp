@@ -22,7 +22,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4qt.h"
 #include "fp4effect.h"
 #include "fp4managerapplication.h"
-#include <QtGui>
+#include <QtWidgets>
 
 #define ADVANCED_MODE_INDEX 8
 

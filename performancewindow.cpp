@@ -24,7 +24,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "config.h"
 #include "fp4managerapplication.h"
 #include "themeicon.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <QListView>
 #include <algorithm>
 

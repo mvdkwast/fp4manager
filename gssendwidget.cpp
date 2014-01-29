@@ -20,7 +20,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 
 #include "gssendwidget.h"
 #include "fp4qt.h"
-#include <QtGui>
+#include <QtWidgets>
 
 GSSendWindow::GSSendWindow(FP4Qt *fp4, QWidget *parent) :
     Window("gs-send", parent),

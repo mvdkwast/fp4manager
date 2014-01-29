@@ -24,7 +24,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "keyboardrangeeditdialog.h"
 #include "fp4constants.h"
 #include "musictheory.h"
-#include <QtGui>
+#include <QtWidgets>
 
 ControllerKeysGenerator::ControllerKeysGenerator(FP4Qt *fp4, int channel, QWidget *parent) :
     ControllerGenerator(fp4, channel, parent)

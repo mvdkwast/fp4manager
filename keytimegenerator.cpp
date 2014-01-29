@@ -21,7 +21,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "keytimegenerator.h"
 #include "fp4qt.h"
 #include "config.h"
-#include <QtGui>
+#include <QtWidgets>
 
 KeyTimeGenerator::KeyTimeGenerator(FP4Qt *fp4, int channel, QWidget *parent) :
     ControllerGenerator(fp4, channel, parent)

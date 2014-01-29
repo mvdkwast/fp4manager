@@ -21,7 +21,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "keyboardrangewidget.h"
 #include "keyboardwidget.h"
 #include "musictheory.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <QDebug>
 
 #define HANDLE_WIDTH 5

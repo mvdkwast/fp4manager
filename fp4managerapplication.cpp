@@ -78,7 +78,10 @@ QString FP4ManagerApplication::scalesFile() const {
 }
 
 QString FP4ManagerApplication::dataPath() const {
-    return QDesktopServices::storageLocation(QDesktopServices::DataLocation);
+    QString p = QStandardPaths::standardLocations(QStandardPaths::DataLocation).first();
+    if (p.isEmpty())
+        p = QDir::homePath() + QDir::separator() + DEFAULT_DATA_PATH;
+    return p;
 }
 
 QString FP4ManagerApplication::configurationsPath() const {

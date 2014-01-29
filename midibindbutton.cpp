@@ -24,7 +24,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4managerapplication.h"
 #include "fp4win.h"
 #include "bindingmanagerwidget.h"
-#include <QtGui>
+#include <QtWidgets>
 
 MidiBindButton::MidiBindButton(FP4Qt *fp4, QWidget *target, QWidget *parent) :
     QPushButton("", parent),

@@ -22,7 +22,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4managerapplication.h"
 #include "fp4qt.h"
 #include "channelswindow.h"
-#include <QtGui>
+#include <QtWidgets>
 
 #define EFFECT_TO_CHORUS "Send to Chorus"
 #define EFFECT_TO_REVERB "Send to Reverb"

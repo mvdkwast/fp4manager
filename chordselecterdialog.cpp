@@ -21,7 +21,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "chordselecterdialog.h"
 #include "keyboardwidget.h"
 #include "fp4managerapplication.h"
-#include <QtGui>
+#include <QtWidgets>
 
 ChordSelecterDialog::ChordSelecterDialog(QWidget *parent) :
     QDialog(parent)

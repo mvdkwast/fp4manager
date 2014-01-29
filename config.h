@@ -39,6 +39,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 
 #define CONFIG_FILE_EXTENSION "fp4config"
 #define TIMELINE_FILE_EXTENSION "fp4timeline"
+#define DEFAULT_DATA_PATH ".fp4manager"
 
 // time messages are displayed in statusbar in ms
 #define STATUSBAR_TIMEOUT 2000

@@ -18,7 +18,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 
 ******************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 #include "config.h"
 #include "fp4win.h"
 #include "fp4managerapplication.h"

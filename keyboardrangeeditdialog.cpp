@@ -21,7 +21,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "keyboardrangeeditdialog.h"
 #include "keyboardwidget.h"
 #include "keyboardrangewidget.h"
-#include <QtGui>
+#include <QtWidgets>
 
 KeyboardRangeEditDialog::KeyboardRangeEditDialog(QWidget *parent) :
     QDialog(parent)

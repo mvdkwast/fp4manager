@@ -20,7 +20,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 
 #include "keyboardwidget.h"
 #include "musictheory.h"
-#include <QtGui>
+#include <QtWidgets>
 
 // standard 88 keys range
 #define DEFAULT_LOWEST  21

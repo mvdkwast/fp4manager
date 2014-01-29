@@ -28,7 +28,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "controllerkeysgenerator.h"
 #include "keytimegenerator.h"
 #include "voicinggenerator.h"
-#include <QtGui>
+#include <QtWidgets>
 
 ControllerGeneratorWindow::ControllerGeneratorWindow(FP4Qt *fp4, int channel, QWidget *parent) :
     Window(QString("generator-%1").arg(channel), parent),

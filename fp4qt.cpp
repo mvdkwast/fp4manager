@@ -22,7 +22,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "controllerbinding.h"
 #include "channeltransform.h"
 #include "fp4constants.h"
-#include <QtGui>
+#include <QtWidgets>
 #include <QDebug>
 
 /* Macros to keep track of played notes in mapped channels. This is so to

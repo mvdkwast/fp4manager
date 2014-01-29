@@ -27,7 +27,7 @@ Foobar. If not, see http://www.gnu.org/licenses/.
 #include "fp4constants.h"
 #include "fp4managerapplication.h"
 #include "themeicon.h"
-#include <QtGui>
+#include <QtWidgets>
 
 SplitsWindow::SplitsWindow(FP4Qt *fp4, QWidget *parent) :
     Window("splits", parent),
