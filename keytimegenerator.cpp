@@ -27,6 +27,7 @@ KeyTimeGenerator::KeyTimeGenerator(FP4Qt *fp4, int channel, QWidget *parent) :
     ControllerGenerator(fp4, channel, parent)
 {
     m_timer = new QTimer;
+    m_timer->setTimerType(Qt::PreciseTimer);
     connect(m_timer, SIGNAL(timeout()), SLOT(onTimer()));
 }
 
