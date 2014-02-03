@@ -222,6 +222,10 @@ void EffectParametersWidget::initParameters() {
     addParameter(EFFECT_DRY_WET_MIX, new FP4ContinuousParam("Dry/Wet", 0, 127, 0, 127, "",
         "EFX depth dry (0) / wet (127)",
         "Effect", 0x64));
+
+    m_parameterNames << EFFECT_TO_REVERB
+                     << EFFECT_TO_CHORUS
+                     << EFFECT_DRY_WET_MIX;
 }
 
 void EffectParametersWidget::buildUI() {
