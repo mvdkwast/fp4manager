@@ -706,7 +706,10 @@ void FP4::sendBytes(unsigned char data[], unsigned int length) {
         snd_seq_ev_set_dest(&ev, m_output_id, m_output_port);
         snd_seq_ev_set_direct(&ev);
         snd_seq_ev_set_sysex(&ev, length, data);
-        snd_seq_event_output_direct(m_seq, &ev);
+        int ret = snd_seq_event_output_direct(m_seq, &ev);
+        if (ret < 0) {
+            cerr << "snd_seq_event_output_direct returned failure: " << ret;
+        }
     }
 }
 
