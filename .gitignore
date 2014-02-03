@@ -2,3 +2,5 @@ moc_*
 *.o
 .*.sw?
 fp4
+*.pro.user
+*.pro.user*
