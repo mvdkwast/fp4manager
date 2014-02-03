@@ -57,7 +57,8 @@ void ParametersWidget::restoreDefaults() {
 
     sendAll();
     updateUI();
-    enableSignals();}
+    enableSignals();
+}
 
 void ParametersWidget::restoreSettings(QSettings &settings) {
     settings.beginGroup(settingsKey());
@@ -415,21 +416,33 @@ void ParametersWidget::setHandler(const QString &label, QObject *obj, const char
 
 void ParametersWidget::restoreState(QSettings &settings, const QString &keyName) {
     QStringList values = settings.value(keyName).toStringList();
-    if (values.count() != m_parameters.keys().count()) {
+    bool hasValidValues = true;
+
+    if (values.count() == 0) {
+        qDebug() << "No saved preset for current effect";
+        hasValidValues = false;
+    }
+    else if (values.count() != m_parameters.keys().count()) {
         qDebug() << "Saved settings parameter count doesn't match actual parameter count.";
+        hasValidValues = false;
         return;
     }
 
-    disableSignals();
+    if (hasValidValues) {
+        disableSignals();
 
-    int i=0;
-    foreach(QString name, m_parameters.keys()) {
-        setParameterValue(name, values.at(i++).toInt());
+        int i=0;
+        foreach(QString name, m_parameters.keys()) {
+            setParameterValue(name, values.at(i++).toInt());
+        }
+
+        sendAll();
+        updateUI();
+        enableSignals();
     }
-
-    sendAll();
-    updateUI();
-    enableSignals();
+    else {
+        restoreDefaults();
+    }
 }
 
 void ParametersWidget::saveState(QSettings &settings, const QString &keyName) {
