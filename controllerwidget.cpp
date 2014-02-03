@@ -136,7 +136,7 @@ ControllersWindow::ControllersWindow(int channel, QWidget *parent) :
     pitchWidget->setChannel(m_channel);
     pitchWidget->init();
     tabWidget->addTab(pitchWidget, "P&itch");
-    m_parameterWidgets << pitchWidget;
+//    m_parameterWidgets << pitchWidget;
 
     m_statusBar = new QStatusBar;
     topLayout->addWidget(m_statusBar);

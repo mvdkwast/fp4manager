@@ -35,7 +35,7 @@ QString PortamentoWidget::controllersGroup() const {
 }
 
 void PortamentoWidget::initParameters() {
-    const char* group = QString("Portamento %1").arg(m_channel).toLatin1().constData();
+    QString group = QString("Portamento %1").arg(m_channel).toLatin1().constData();
 
     addParameter(PORTAMENTO_TIME, new FP4ContinuousParam("Time", 0, 127, 0, 127, "", "Portamento time", group, 0));
     addParameter(PORTAMENTO_ONOFF, new FP4BooleanParam("On/Off", "Portamento On/Off", group, 0));

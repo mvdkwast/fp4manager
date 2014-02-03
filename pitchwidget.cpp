@@ -72,7 +72,7 @@ QString PitchWidget::presetFile() const {
 }
 
 void PitchWidget::initParameters() {
-    const char* group = QString("Pitch %1").arg(m_channel).toLatin1().constData();
+    QString group = QString("Pitch %1").arg(m_channel).toLatin1().constData();
     addParameter(PITCH_VALUE, new FP4ContinuousParam("Pitch Bend", -8192, 8191, -100, 100, "", "Pitch bend", group, 0));
     addParameter(PITCH_RANGE, new FP4ContinuousParam(
                      "Pitch Range", 0, 24, 0, 24, "semitones", "Range of the pitch bend control", group, 2));

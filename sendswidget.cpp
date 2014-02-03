@@ -35,7 +35,7 @@ QString SendsWidget::controllersGroup() const {
 }
 
 void SendsWidget::initParameters() {
-    const char* group = QString("Sends %1").arg(m_channel).toLatin1().constData();
+    QString group = QString("Sends %1").arg(m_channel).toLatin1().constData();
 
     addParameter(SEND_REVERB, new FP4ContinuousParam(
                      "Reverb Send Level", 0, 127, 0, 127, "", "Amount of sound that is send to the reverb unit", group, 0x28));

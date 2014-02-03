@@ -42,7 +42,7 @@ QString SoundParametersWidget::presetFile() const {
 }
 
 void SoundParametersWidget::initParameters() {
-    const char* group = QString("Filter %1").arg(m_channel).toLatin1().constData();
+    QString group = QString("Filter %1").arg(m_channel).toLatin1().constData();
 
     addParameter(FILTER_RESONANCE, new FP4ContinuousParam("Filter Resonance", 0, 127, 0, 127, "", "Filter resonance", group, 0x40));
     addParameter(FILTER_CUTOFF, new FP4ContinuousParam("Filter Cutoff", 0, 127, 0, 127, "", "Filter cutoff", group, 0x40));

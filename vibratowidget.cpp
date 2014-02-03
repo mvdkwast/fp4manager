@@ -40,7 +40,7 @@ QString VibratoWidget::presetFile() const {
 }
 
 void VibratoWidget::initParameters() {
-    const char* group = QString("Vibrato %1").arg(m_channel).toLatin1().constData();
+    QString group = QString("Vibrato %1").arg(m_channel).toLatin1().constData();
 
     addParameter(VIBRATO_RATE, new FP4ContinuousParam("Vibrato Rate", 0, 127, 0, 127, "", "Vibrato rate", group, 0x40));
     addParameter(VIBRATO_DEPTH, new FP4ContinuousParam("Vibrato Depth", 0, 127, 0, 127, "", "Vibrato Depth", group, 0x40));
