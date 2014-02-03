@@ -36,7 +36,7 @@ void Preferences::loadSettings(QSettings &settings) {
     m_restoreReverbAndChorus = settings.value("restoreReverbAndChorus", true).value<bool>();
     m_restoreInstrument = settings.value("restoreInstrument", true).value<bool>();
     m_restoreEffect = settings.value("restoreEffect", true).value<bool>();
-    m_restoreControllers = settings.value("restoreControllers", true).value<bool>();
+    m_restoreControllers = settings.value("restoreControllers", false).value<bool>();
     m_useGM2Banks = settings.value("useGM2Banks", true).value<bool>();
     m_sendGSReset = settings.value("sendGSReset", true).value<bool>();
     m_sendLocalOn = settings.value("sendLocalOn", true).value<bool>();
